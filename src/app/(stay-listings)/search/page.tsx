@@ -1,6 +1,8 @@
 import React, { FC } from "react";
 import SectionGridFilterCard from "../SectionGridFilterCard";
 
+export const dynamic = "force-dynamic";
+
 export interface ListingStayPageProps {}
 
 const ListingStayPage: FC<ListingStayPageProps> = () => {

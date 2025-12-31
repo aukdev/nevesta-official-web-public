@@ -5,7 +5,7 @@ import ListingImageGallery from "@/components/listing-image-gallery/ListingImage
 import SectionSliderNewCategories from "@/components/SectionSliderNewCategories";
 import SectionSubscribe2 from "@/components/SectionSubscribe2";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import React, { ReactNode } from "react";
+import React, { ReactNode, Suspense } from "react";
 import MobileFooterSticky from "./(components)/MobileFooterSticky";
 import { imageGallery as listingStayImageGallery } from "./(listing-vendor-detail)/[id]/constant";
 import { imageGallery as listingCarImageGallery } from "./listing-car-detail/constant";
@@ -61,7 +61,7 @@ const readVendorGallery = (): ListingGalleryImage[] => {
   return [];
 };
 
-const DetailtLayout = ({ children }: { children: ReactNode }) => {
+const DetailLayoutContent = ({ children }: { children: ReactNode }) => {
   const router = useRouter();
   const thisPathname = usePathname();
   const searchParams = useSearchParams();
@@ -121,6 +121,20 @@ const DetailtLayout = ({ children }: { children: ReactNode }) => {
       {/* STICKY FOOTER MOBILE */}
       <MobileFooterSticky />
     </div>
+  );
+};
+
+const DetailtLayout = ({ children }: { children: ReactNode }) => {
+  return (
+    <Suspense
+      fallback={
+        <div className="ListingDetailPage">
+          <div className="ListingDetailPage__content">{children}</div>
+        </div>
+      }
+    >
+      <DetailLayoutContent>{children}</DetailLayoutContent>
+    </Suspense>
   );
 };
 

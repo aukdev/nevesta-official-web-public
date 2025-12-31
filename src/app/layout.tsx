@@ -9,7 +9,6 @@ import Footer from "@/components/Footer";
 import FooterNav from "@/components/FooterNav";
 import { Metadata } from "next";
 
-
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
@@ -18,10 +17,17 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Nevesta.lk - Wedding Services Marketplace",
-  description: "Find and book wedding services online easily with Nevesta.lk. Your one-stop platform for all wedding needs in Sri Lanka.",
-  keywords: "wedding services, wedding planning, book wedding services, Sri Lanka weddings, wedding vendors, bridal services, groom services, wedding packages, event planning, wedding marketplace",
-  viewport:
-    "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
+  description:
+    "Find and book wedding services online easily with Nevesta.lk. Your one-stop platform for all wedding needs in Sri Lanka.",
+  keywords:
+    "wedding services, wedding planning, book wedding services, Sri Lanka weddings, wedding vendors, bridal services, groom services, wedding packages, event planning, wedding marketplace",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+  maximumScale: 1.0,
+  userScalable: false,
 };
 
 export default function RootLayout({

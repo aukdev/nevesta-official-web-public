@@ -1,6 +1,8 @@
 "use client";
 
 import React, { FC, useState } from "react";
+
+export const dynamic = "force-dynamic";
 import { ArrowRightIcon, Squares2X2Icon } from "@heroicons/react/24/outline";
 import CommentListing from "@/components/CommentListing";
 import FiveStartIconForRate from "@/components/FiveStartIconForRate";
